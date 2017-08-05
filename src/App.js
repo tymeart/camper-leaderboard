@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Board from './Board';
+import Table from './Table';
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
@@ -8,8 +9,10 @@ class App extends Component {
 
   render() {
     return (
-      <h1>FCC Camper Leaderboard</h1>
-      <Board username={'Brad'} recentPoints={20} allPoints={130}/>
+      <div>
+        <h1>FCC Camper Leaderboard</h1>
+        <Table username={'Brad'} recentPoints={20} allPoints={130}/>
+      </div>
     );
   }
 }
