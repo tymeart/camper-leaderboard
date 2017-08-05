@@ -5,6 +5,16 @@ import axios from 'axios';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      users: []
+    };
+  }
+
+  componentDidMount() {
+    axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
+      .then(res => {
+        this.setState({users: res.data});
+      });
   }
 
   render() {
