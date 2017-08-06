@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 
 class Table extends Component {
   render() {
@@ -13,7 +13,7 @@ class Table extends Component {
         </thead>
 
         <tbody>
-            {this.props.users.map(user => {
+            {this.props.recentUsers.map(user => {
               return (
                 <tr key={user.username}>
                   <td>{user.username}</td>
