@@ -13,11 +13,16 @@ class Table extends Component {
         </thead>
 
         <tbody>
-          <tr>
-            <td>{this.props.username}</td>
-            <td>{this.props.recentPoints}</td>
-            <td>{this.props.allPoints}</td>
-          </tr>
+            {this.props.users.map(user => {
+              return (
+                <tr key={user.username}>
+                  <td>{user.username}</td>
+                  <td>{user.recent}</td>
+                  <td>{user.alltime}</td>
+                </tr>
+                );
+              })
+            }
         </tbody>
       </table>
     );

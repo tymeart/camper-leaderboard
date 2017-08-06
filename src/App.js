@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <h1>FCC Camper Leaderboard</h1>
-        <Table username={'Brad'} recentPoints={20} allPoints={130}/>
+        <Table users={this.state.users}/>
       </div>
     );
   }
