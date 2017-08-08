@@ -13,7 +13,7 @@ class Table extends Component {
         </thead>
 
         <tbody>
-            {this.props.recentUsers.map(user => {
+            {this.props.users.map(user => {
               return (
                 <tr key={user.username}>
                   <td>{user.username}</td>

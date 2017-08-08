@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import Table from './Table';
 import axios from 'axios';
+import Table from './Table';
+import SortButton from './SortButton';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recentUsers: [],
-      alltimeUsers: []
+      users: []
     };
   }
 
-  componentDidMount() {
-    axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
+  updateUsers(option) {
+    axios.get(`https://fcctop100.herokuapp.com/api/fccusers/top/${option}`)
       .then(res => {
-        this.setState({recentUsers: res.data});
-      });
-
-    axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
-      .then(res => {
-        this.setState({alltimeUsers: res.data});
+        this.setState({users: res.data});
       });
   }
 
@@ -27,7 +22,9 @@ class App extends Component {
     return (
       <div>
         <h1>FCC Camper Leaderboard</h1>
-        <Table users={this.state.recentUsers}/>
+        <SortButton onClick={this.updateUsers.bind(this, 'recent')} option={'Recently Earned Points'}/>
+        <SortButton onClick={this.updateUsers.bind(this, 'alltime')} option={'Total Points'}/>
+        <Table users={this.state.users}/>
       </div>
     );
   }
