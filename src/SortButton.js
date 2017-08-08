@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const SortButton = (props) => {
-  return (
-    <button>Sort by {props.option}</button>
-  );
+class SortButton extends Component {
+  render() {
+    return (
+      <button onClick={this.props.onClick}>Sort by {this.props.name}</button>
+    );
+  }
 }
 
 export default SortButton;

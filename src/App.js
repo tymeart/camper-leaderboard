@@ -4,14 +4,18 @@ import Table from './Table';
 import SortButton from './SortButton';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: []
-    };
+  state = {
+    users: []
+  };
+
+  componentDidMount() {
+    axios.get(`https://fcctop100.herokuapp.com/api/fccusers/top/recent`)
+      .then(res => {
+        this.setState({users: res.data});
+      });
   }
 
-  updateUsers(option) {
+  updateUsers = (option) => {
     axios.get(`https://fcctop100.herokuapp.com/api/fccusers/top/${option}`)
       .then(res => {
         this.setState({users: res.data});
@@ -20,10 +24,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>FCC Camper Leaderboard</h1>
-        <SortButton onClick={this.updateUsers.bind(this, 'recent')} option={'Recently Earned Points'}/>
-        <SortButton onClick={this.updateUsers.bind(this, 'alltime')} option={'Total Points'}/>
+        <div className="buttons">
+          <SortButton onClick={this.updateUsers.bind(this, 'recent')} name={'Recently Earned Points'}/>
+          <SortButton onClick={this.updateUsers.bind(this, 'alltime')} name={'Total Points'}/>
+        </div>
         <Table users={this.state.users}/>
       </div>
     );
