@@ -12,14 +12,33 @@ body {
   align-items: center;
 }
 
+button {
+  background-color: #327D3C;
+  border: 2px solid #327D3C;
+  color: white;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 table {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: 60%;
 }
 
 th {
   font-size: 1.3rem;
   padding: 0 30px 10px 30px
+}
+
+h1 {
+  font-size: 2.5rem;
 }
 
 h1, th {
