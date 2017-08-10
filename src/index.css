@@ -39,3 +39,11 @@ tbody tr {
 tbody tr:nth-child(2n+1) {
   background-color: #DBF0DE;
 }
+
+a, a:visited {
+  color: #0A3E11;
+}
+
+a:active, a:hover {
+  text-decoration: none;
+}

@@ -16,7 +16,7 @@ class Table extends Component {
             {this.props.users.map(user => {
               return (
                 <tr key={user.username}>
-                  <td>{user.username}</td>
+                  <td><a href={`https://www.freecodecamp.com/${user.username}`}>{user.username}</a></td>
                   <td>{user.recent}</td>
                   <td>{user.alltime}</td>
                 </tr>
