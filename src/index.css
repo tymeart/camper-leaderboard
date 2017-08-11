@@ -27,14 +27,20 @@ button:hover {
 }
 
 table {
+  border-collapse: collapse;
   margin-top: 30px;
   margin-bottom: 30px;
   width: 60%;
 }
 
+table, th, td {
+  border: 1px dotted #7A7B7A;
+}
+
 th {
+  background-color: #DBF0DE;
   font-size: 1.3rem;
-  padding: 0 30px 10px 30px
+  padding: 10px 30px;
 }
 
 h1 {
@@ -53,10 +59,6 @@ tbody tr {
   color: #0A3E11;
   font-size: 1.2rem;
   height: 40px;
-}
-
-tbody tr:nth-child(2n+1) {
-  background-color: #DBF0DE;
 }
 
 a, a:visited {
