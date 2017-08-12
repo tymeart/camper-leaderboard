@@ -12,7 +12,8 @@ class App extends Component {
     axios.get(`https://fcctop100.herokuapp.com/api/fccusers/top/recent`)
       .then(res => {
         this.setState({users: res.data});
-      });
+      })
+      .then(() => this.showSortedColumn('recent'));
   }
 
   showSortedColumn = (selectedSortOption) => {
