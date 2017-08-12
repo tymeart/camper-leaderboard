@@ -17,8 +17,8 @@ class Table extends Component {
               return (
                 <tr key={user.username}>
                   <td><a href={`https://www.freecodecamp.com/${user.username}`}>{user.username}</a></td>
-                  <td>{user.recent}</td>
-                  <td>{user.alltime}</td>
+                  <td className="recent">{user.recent}</td>
+                  <td className="alltime">{user.alltime}</td>
                 </tr>
                 );
               })

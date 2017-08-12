@@ -68,3 +68,7 @@ a, a:visited {
 a:active, a:hover {
   text-decoration: none;
 }
+
+.sorted {
+  background-color: #EEF3EE;
+}

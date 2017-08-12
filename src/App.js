@@ -15,12 +15,30 @@ class App extends Component {
       });
   }
 
+  showSortedColumn = (selectedSortOption) => {
+    var recentPoints = document.getElementsByClassName('recent');
+    var alltimePoints = document.getElementsByClassName('alltime');
+    if (selectedSortOption === 'recent') {
+      for (let i = 0; i < 100; i++) {
+        alltimePoints[i].classList.remove('sorted');
+        recentPoints[i].classList.add('sorted');
+      }
+    } else {
+      for (let i = 0; i < 100; i++) {
+        recentPoints[i].classList.remove('sorted');
+        alltimePoints[i].classList.add('sorted');
+      }
+    }
+  }
+
   updateUsers = (option) => {
     axios.get(`https://fcctop100.herokuapp.com/api/fccusers/top/${option}`)
       .then(res => {
         this.setState({users: res.data});
-      });
+      })
+      .then(() => this.showSortedColumn(option));
   }
+
 
   render() {
     return (
